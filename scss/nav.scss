@@ -1,0 +1,40 @@
+nav{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    height: 10vh;
+    background-color: black;
+    z-index: 10;
+    .mrgn-right{
+        margin-right: auto;
+    }
+    a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        padding: 0 1rem;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+    div{
+        display: flex;
+        flex-grow: 1;
+        justify-content: space-around;
+        height: 100%;
+    }
+
+}
+@media (min-width: $tablet){
+    nav{
+        div{
+            flex-grow: 0;
+            width: 70%;
+        }
+        a{
+            padding: 0 2rem;
+        }
+    }
+}
