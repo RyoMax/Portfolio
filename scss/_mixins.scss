@@ -1,0 +1,12 @@
+@mixin CodeArrow($direction, $size) {
+    width: $size;
+    height: $size;
+    background-color: $bright;
+    clip-path: polygon(75% 0%,
+        25% 50%, 
+        75% 100%, 
+        50% 100%, 
+        0% 50%, 
+        50% 0%);
+    transform: rotate($direction);
+}
