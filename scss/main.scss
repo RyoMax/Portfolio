@@ -1,4 +1,15 @@
-@import "reset";
-@import "variables";
-@import "mixins";
-@import "layout";
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+
+@import "./home";
+//Navigation
+@import "./nav";
+//About me
+@import "./about";
+//Projects
+@import "./projects.scss";
+//Contact me 
+@import "./contact";
+//footer
+@import "./footer";

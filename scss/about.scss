@@ -13,12 +13,12 @@
             width: 250px;
             height: 250px;
             top: -150%;
-            transform: perspective(400px) rotateY(0deg) rotateX(90deg);
             transform-style: preserve-3d;
+            transform: perspective(400px) rotateY(0deg) rotateX(90deg);
             animation: RotateParent3D 10s linear infinite;
             div{
                 position: absolute;
-                transform: rotateX(-90deg) rotateY(0deg) translateY(100%);
+                transform:  rotateX(-90deg) rotateY(0deg) translateY(100%);
                 animation: RotateChild3D 10s linear infinite;
                 img{
                     display: block;

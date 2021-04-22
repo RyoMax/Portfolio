@@ -1,0 +1,189 @@
+.contact{
+    display: grid;
+    grid-template-areas:    "intro"
+                            "form"
+                            "details";
+    .contact-intro{
+        grid-area: intro;
+        h2{
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        p{
+            margin-bottom: 4rem;
+        }
+        
+    }
+    .contact-map{
+        display: none;
+        grid-area: map;
+        iframe{
+            width: 100%;
+            height: auto;
+        }
+    }
+    .contact-form{
+        grid-area: form;
+        form{
+            display: grid;
+            grid-template-areas:    "heading" 
+                                    "primary"
+                                    "secondary"
+                                    "send";
+            border: 4px solid $orange;
+            border-radius: 15px;
+            padding: 2rem;
+            background-color: $dark;
+            color: $bright;
+            font-weight: bold;
+            .heading{
+                grid-area: heading;
+                h2{
+                    text-align: center;
+                }
+            }
+            .primary{
+                grid-area: primary;
+            }
+            .secondary{
+                grid-area: secondary;
+            }
+            .send{
+                grid-area: send;
+                display: flex;
+                justify-content: center;
+            }
+            .grid-element{
+                div{
+                    display: flex;
+                    justify-content: center;
+                    &:not(.last){
+                        margin-bottom: 1.5rem;
+                    }
+                    &::before{
+                        content: "";
+                        @include CodeArrow($left, 2rem);
+                    }
+                    &::after{
+                        content: "";
+                        @include CodeArrow($right, 2rem);
+                    }                
+                    input:not(.btn), textarea{
+                        padding: 0 1rem;
+                        width: calc(100% - 4rem);
+                        height: 2rem;
+                        border: 2px solid $bright;
+                        border-radius: 5px;
+                        background-color: $dark;
+                        color: $bright;
+                        &::placeholder{
+                            color: $bright;
+                            opacity: 0.8;
+                        }
+                        &:focus{
+                            border: 2px solid $orange;
+                            outline: none;
+                            box-shadow: 0 0 8px $orange;
+                        }
+                    }
+                    textarea{
+                        height: 8rem;
+                        width: calc(100% - 4rem);
+                        resize: none;
+                        padding: 1rem;
+                    }  
+                }
+                .last::before{
+                    content: "";
+                    transform: translateY(150%);
+                }
+                .last::after{
+                    content: "";
+                    transform: translateY(150%) rotate($right);
+                }
+                label{
+                    display: block;
+                    margin: .3rem 0;
+                    text-align: center
+                }
+                input[type="submit"]{
+                    margin-top: 3.5rem;
+                    
+                }
+            }
+            
+        }
+    }
+    .contact-details{
+        grid-area: details;
+        margin: 4rem 0;
+        address{
+            text-align: center;
+        }
+    }
+    
+}
+@media (min-width: $tablet){
+    .contact{
+        grid-template-areas:    "intro intro"
+                                "form details";
+        grid-template-columns: 1fr 15rem;
+        .contact-form{
+            form{
+                grid-template-areas:    "heading heading"
+                                        "primary secondary"
+                                        "send send";
+                grid-template-columns: 1fr 1.5fr;
+                gap: 2rem;
+                .grid-element{
+                    div{
+                        &::before{
+                            content: "";
+                            @include CodeArrow($left, 3rem);
+                        }
+                        &::after{
+                            content: "";
+                            @include CodeArrow($right, 3rem);
+                        }      
+                        input:not(.send){
+                            height: 3rem;
+                        }
+                        textarea{
+                            height: 16.2rem;
+                        }
+                    }
+                    .last::before{
+                        content: "";
+                        transform: translateY(222%);
+                    }
+                    .last::after{
+                        content: "";
+                        transform: translateY(222%) rotate($right);
+                        input[type="submit"]{
+                            margin-top: 0rem;
+                            
+                        }
+                    }
+                }
+            }
+        }
+        .contact-details{
+            display: flex;
+            align-items: center;
+            address{
+                text-align: left;
+                margin: 0 0 0 2rem;
+            }
+        }
+    }
+}
+@media (min-width: $desktop){
+    .contact{
+        grid-template-areas:    "intro map map"
+                                "form form details";
+        grid-template-columns: 1fr 1fr 15rem;
+        .contact-map{
+            display: block;
+        }
+    }
+}

@@ -14,6 +14,9 @@ body {
   color: white;
 }
 
+/* .btn{
+
+} */
 main {
   padding: 2rem;
   background-color: black;
@@ -48,7 +51,7 @@ nav div {
   height: 100%;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   nav div {
     flex-grow: 0;
     width: 70%;
@@ -69,8 +72,8 @@ nav div {
   width: 250px;
   height: 250px;
   top: -150%;
-  transform: perspective(400px) rotateY(0deg) rotateX(90deg);
   transform-style: preserve-3d;
+  transform: perspective(400px) rotateY(0deg) rotateX(90deg);
   animation: RotateParent3D 10s linear infinite;
 }
 .about .animating-skills .pentagon div {
@@ -129,7 +132,7 @@ nav div {
   }
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .about .animating-skills .pentagon {
     width: 400px;
     height: 400px;
@@ -245,13 +248,24 @@ nav div {
   text-align: center;
 }
 
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .projects {
     flex-flow: row wrap;
     justify-content: space-around;
   }
   .projects .project-card {
     width: 45%;
+  }
+  .projects .project-card h3 {
+    font-size: 3rem;
+  }
+  .projects .project-card p {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .projects .project-card {
+    width: 30%;
   }
   .projects .project-card h3 {
     font-size: 3rem;
@@ -274,10 +288,20 @@ nav div {
 .contact .contact-intro p {
   margin-bottom: 4rem;
 }
+.contact .contact-map {
+  display: none;
+  grid-area: map;
+}
+.contact .contact-map iframe {
+  width: 100%;
+  height: auto;
+}
 .contact .contact-form {
   grid-area: form;
 }
 .contact .contact-form form {
+  display: grid;
+  grid-template-areas: "heading" "primary" "secondary" "send";
   border: 4px solid coral;
   border-radius: 15px;
   padding: 2rem;
@@ -285,11 +309,31 @@ nav div {
   color: white;
   font-weight: bold;
 }
-.contact .contact-form form div {
+.contact .contact-form form .heading {
+  grid-area: heading;
+}
+.contact .contact-form form .heading h2 {
+  text-align: center;
+}
+.contact .contact-form form .primary {
+  grid-area: primary;
+}
+.contact .contact-form form .secondary {
+  grid-area: secondary;
+}
+.contact .contact-form form .send {
+  grid-area: send;
   display: flex;
   justify-content: center;
 }
-.contact .contact-form form div::before {
+.contact .contact-form form .grid-element div {
+  display: flex;
+  justify-content: center;
+}
+.contact .contact-form form .grid-element div:not(.last) {
+  margin-bottom: 1.5rem;
+}
+.contact .contact-form form .grid-element div::before {
   content: "";
   width: 2rem;
   height: 2rem;
@@ -297,7 +341,7 @@ nav div {
   clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
   transform: rotate(0deg);
 }
-.contact .contact-form form div::after {
+.contact .contact-form form .grid-element div::after {
   content: "";
   width: 2rem;
   height: 2rem;
@@ -305,7 +349,7 @@ nav div {
   clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
   transform: rotate(180deg);
 }
-.contact .contact-form form div input:not(.btn), .contact .contact-form form div textarea {
+.contact .contact-form form .grid-element div input:not(.btn), .contact .contact-form form .grid-element div textarea {
   padding: 0 1rem;
   width: calc(100% - 4rem);
   height: 2rem;
@@ -314,39 +358,36 @@ nav div {
   background-color: black;
   color: white;
 }
-.contact .contact-form form div input:not(.btn)::placeholder, .contact .contact-form form div textarea::placeholder {
+.contact .contact-form form .grid-element div input:not(.btn)::placeholder, .contact .contact-form form .grid-element div textarea::placeholder {
   color: white;
   opacity: 0.8;
 }
-.contact .contact-form form div input:not(.btn):focus, .contact .contact-form form div textarea:focus {
+.contact .contact-form form .grid-element div input:not(.btn):focus, .contact .contact-form form .grid-element div textarea:focus {
   border: 2px solid coral;
   outline: none;
   box-shadow: 0 0 8px coral;
 }
-.contact .contact-form form div textarea {
+.contact .contact-form form .grid-element div textarea {
   height: 8rem;
   width: calc(100% - 4rem);
   resize: none;
   padding: 1rem;
 }
-.contact .contact-form form .last::before {
+.contact .contact-form form .grid-element .last::before {
   content: "";
-  /* @include CodeArrow($left, 4rem); */
   transform: translateY(150%);
 }
-.contact .contact-form form .last::after {
+.contact .contact-form form .grid-element .last::after {
   content: "";
-  /* @include CodeArrow($right, 4rem); */
   transform: translateY(150%) rotate(180deg);
 }
-.contact .contact-form form label {
+.contact .contact-form form .grid-element label {
   display: block;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0;
   text-align: center;
 }
-.contact .contact-form form input[type=submit] {
-  display: block;
-  margin: 1rem auto;
+.contact .contact-form form .grid-element input[type=submit] {
+  margin-top: 3.5rem;
 }
 .contact .contact-details {
   grid-area: details;
@@ -356,6 +397,67 @@ nav div {
   text-align: center;
 }
 
+@media (min-width: 768px) {
+  .contact {
+    grid-template-areas: "intro intro" "form details";
+    grid-template-columns: 1fr 15rem;
+  }
+  .contact .contact-form form {
+    grid-template-areas: "heading heading" "primary secondary" "send send";
+    grid-template-columns: 1fr 1.5fr;
+    gap: 2rem;
+  }
+  .contact .contact-form form .grid-element div::before {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(0deg);
+  }
+  .contact .contact-form form .grid-element div::after {
+    content: "";
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(180deg);
+  }
+  .contact .contact-form form .grid-element div input:not(.send) {
+    height: 3rem;
+  }
+  .contact .contact-form form .grid-element div textarea {
+    height: 16.2rem;
+  }
+  .contact .contact-form form .grid-element .last::before {
+    content: "";
+    transform: translateY(222%);
+  }
+  .contact .contact-form form .grid-element .last::after {
+    content: "";
+    transform: translateY(222%) rotate(180deg);
+  }
+  .contact .contact-form form .grid-element .last::after input[type=submit] {
+    margin-top: 0rem;
+  }
+  .contact .contact-details {
+    display: flex;
+    align-items: center;
+  }
+  .contact .contact-details address {
+    text-align: left;
+    margin: 0 0 0 2rem;
+  }
+}
+@media (min-width: 1024px) {
+  .contact {
+    grid-template-areas: "intro map map" "form form details";
+    grid-template-columns: 1fr 1fr 15rem;
+  }
+  .contact .contact-map {
+    display: block;
+  }
+}
 footer {
   height: 30vh;
   padding: 2rem;
