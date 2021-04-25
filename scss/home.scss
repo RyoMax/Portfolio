@@ -10,21 +10,25 @@
 body{
     font-size: 1.6rem;
     font-family: 'cutive mono', Courier, monospace;
-    color: $dark;
-    background-colour: $bright;
+    color: $bright;
+    background-color: $dark;
 }
 
 .btn{
-    height: 3rem;
+    /* height: 3rem; */
     padding: .5rem 1.5rem;
-    margin: 4rem 0;
     border: none;
     outline: none;
     background-color: $orange;
-    border-radius: 3rem;
+    border-radius: 5rem;
     color: $bright;
     font-family: "futura bold";
     font-size: 1.1rem;
+    transition: all .25s;
+    &:hover, &:active{
+        box-shadow: 0 0 20px $orange;
+        background-color: $dark;
+    }
 }
 
 main{
@@ -39,17 +43,21 @@ h1,h2, h3, h4, label, .btn{
     background-size: 400px auto;
     background-repeat: no-repeat;
     background-position: 55px 60px;
+    .btn{
+        margin: 4rem 0;
+        max-width: 70%;
+    }
 }
 .header-home{
-    padding: 3rem 0 0 3rem;
+    padding: 6rem 0 0 3rem;
     h2{
         margin-bottom: 2.5rem;
         width: 50%;
-        font-size: 1.8rem;
+        font-size: 3.5rem;
     }
     h1{
         width: 50%;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
     }
 }
 .main-home{
@@ -57,11 +65,9 @@ h1,h2, h3, h4, label, .btn{
     background-color: unset;
     h3{
         width: 50%;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
     }
     .toolbox{
-        display: flex;
-        justify-content: center;
         margin-top: 3rem;
         > img{
             width: 200px;
@@ -72,55 +78,158 @@ h1,h2, h3, h4, label, .btn{
     .home{
         background-size: 325px auto;
         background-position: 135px 60px;
+        .main-home, .header-home{
+            padding-left: 6rem;
+        }
         h1, h2, h3{
-            max-width: 240px;
+            max-width: 50%;
         }
     }
 }
 @media (min-width: $mobileL){
     .home{
-        background-size: 57% auto;
-        background-position: 125% 60px;
-    }
-    .main-home .toolbox{
-        display: block;
-        margin: 6rem 0 0 4rem;
-        > img{
-            width: 300px;
+        background-size: 85% auto;
+        background-position: 240% 60px;
+        h3{
+            font-size: 2rem;
         }
-    }
-}
-@media (min-width: $tablet){
-    .home{
-        background-position: 125% 110px;
-        h1, h2, h3{
-            max-width: 400px;
+        /* h1, h2, h3{
+            max-width: 50%;
+        } */
+        .header-home{
+            padding-top: 12rem;
+            h2{
+                font-size: 4rem;
+            }
+            h1{
+                font-size: 2.2rem;
+            }
+        }
+        .btn{
+            font-size: 1.5rem;
+            padding: 1rem 2rem;
+            margin: 5rem 0;
+            max-width: 58%;
+        }
+        .main-home .toolbox{
+            display: block;
+            margin: 6rem 0 0 4rem;
+            > img{
+                width: 300px;
+            }
         }
     }
     
-    /* .main-home .toolbox{
-        display: block;
-        margin: 6rem 0 0 4rem;
-        > img{
-            width: 300px;
+}
+@media (min-width: $tablet){
+    .home{
+        background-size: 90% auto;
+        background-position: 300% 110px;
+        .main-home, .header-home{
+            padding-left: 9rem;
         }
-    } */
+        h3{
+            font-size: 2.5rem;
+        }
+        h2{
+            max-width: 45%;
+        }
+        h1, h3{
+            max-width: 35%;
+        }
+        .btn{
+            font-size: 2rem;
+        }
+        .header-home{
+            h2{
+                font-size: 6rem;
+            }
+            h1{
+                font-size: 3rem;
+            }
+        }
+        .main-home .toolbox{
+            display: block;
+            margin: 6rem 0 0 4rem;
+            > img{
+                width: 400px;
+            }
+        }
+    }
 }
 @media (min-width: $desktop){
     .home{
-        background-size: auto 80%;
-        background-position: 115% 110px;
-        h1, h2, h3{
+        background-size: 75% auto;
+        background-position: 145% 110px;
+        /* h1, h2, h3{
             max-width: 50%;
+        } */
+        .main-home, .header-home{
+            padding-left: 11rem;
         }
-    }
-    .main-home .toolbox{
-        display: block;
-        margin: 6rem 0 0 4rem;
-        > img{
-            width: 300px;
+        .header-home{
+            padding-top: 15rem;
+            h2{
+                font-size: 8rem;
+                margin-bottom: 4rem;
+            }
+            h1{
+                font-size: 4rem;
+            }
         }
-    }
+        .btn{
+            font-size: 2.5rem;
+            padding: 1.5rem 3rem;
+            margin: 8rem 0;
+        }
+        h3{
+            font-size: 3rem;
+        }
+        /* h2{
+            max-width: 45%;
+        }
+        h1, h3{
+            max-width: 35%;
+        } */
+        
+        .main-home .toolbox{
+            display: block;
+            margin: 6rem 0 0 4rem;
+            > img{
+                width: 600px;
+            }
+        }
+    }  
+}
+@media (min-width: $desktopM){
+    .home{
+        background-size: 63% auto;
+        background-position: 130% 110px;
+        /* h1, h2, h3{
+            max-width: 50%;
+        } */
+        .main-home, .header-home{
+            padding-left: 14rem;
+        }
+        .header-home{
+            padding-top: 26rem;
+            h2{
+                font-size: 10rem;
+            }
+        }
+        .btn{
+            font-size: 3rem;
+            margin: 11rem 0;
+        }
+        
+        .main-home .toolbox{
+            display: block;
+            margin: 6rem 0 0 4rem;
+            > img{
+                width: 800px;
+            }
+        }
+    }  
 }
 
 

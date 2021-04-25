@@ -4,7 +4,7 @@ nav{
     display: flex;
     justify-content: flex-end;
     height: 60px;
-    background-color: $bright;
+    background-color: $dark;
     z-index: 10;
     .logo{
         height: 28px;
@@ -20,7 +20,7 @@ nav{
         padding: 0rem;
         font-family: "futura bold", Helvetica, sans-serif;
         font-size: 1.1rem;
-        color: $dark;
+        color: $bright;
         text-decoration: none;
         font-weight: bold;
         &:not(.mrgn-right)::before, &::before{
@@ -53,12 +53,12 @@ nav{
 }
 @media (min-width: $tablet){
     nav{
-        height:110px;
+        height: 110px;
         .mrgn-right{
             margin-right: auto;
         }
         .logo{
-            height: 70px;
+            height: 50px;
         }
         div{
             flex-grow: 0;
@@ -66,7 +66,7 @@ nav{
         }
         a:not(.mrgn-right){
             padding: 0 2rem;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             &:before, &::before{
                 @include CodeArrow($left, 2rem, transparent);
             }
@@ -84,9 +84,13 @@ nav{
 }
 @media (min-width: $desktop){
     nav{
+        .logo{
+            height: 70px;
+        }
         a{
             padding: 0 3rem;
             margin: 0 2rem;
+            font-size: 2.5rem;
         }
     }
 }
