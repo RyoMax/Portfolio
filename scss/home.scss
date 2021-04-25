@@ -19,12 +19,17 @@ body{
     padding: .5rem 1.5rem;
     border: none;
     outline: none;
+    box-shadow: none;
     background-color: $orange;
     border-radius: 5rem;
     color: $bright;
     font-family: "futura bold";
     font-size: 1.1rem;
     transition: all .25s;
+    &:focus{
+        box-shadow: 0 0 20px $bright;
+        outline: none;
+    }
     &:hover, &:active{
         box-shadow: 0 0 20px $orange;
         background-color: $dark;
@@ -32,8 +37,8 @@ body{
 }
 
 main{
-    padding: 2rem;
-    background-color: $bright;
+    padding: 3rem;
+    background-color: $dark;
 }
 h1,h2, h3, h4, label, .btn{
     font-family: "futura bold";
@@ -106,8 +111,6 @@ h1,h2, h3, h4, label, .btn{
             }
         }
         .btn{
-            font-size: 1.5rem;
-            padding: 1rem 2rem;
             margin: 5rem 0;
             max-width: 58%;
         }
@@ -118,6 +121,10 @@ h1,h2, h3, h4, label, .btn{
                 width: 300px;
             }
         }
+    }
+    .btn{
+        font-size: 1.5rem;
+        padding: 1rem 2rem;
     }
     
 }
@@ -137,9 +144,6 @@ h1,h2, h3, h4, label, .btn{
         h1, h3{
             max-width: 35%;
         }
-        .btn{
-            font-size: 2rem;
-        }
         .header-home{
             h2{
                 font-size: 6rem;
@@ -155,6 +159,12 @@ h1,h2, h3, h4, label, .btn{
                 width: 400px;
             }
         }
+    }
+    .btn{
+        font-size: 2rem;
+    }
+    main{
+        padding: 4rem;
     }
 }
 @media (min-width: $desktop){
@@ -178,8 +188,6 @@ h1,h2, h3, h4, label, .btn{
             }
         }
         .btn{
-            font-size: 2.5rem;
-            padding: 1.5rem 3rem;
             margin: 8rem 0;
         }
         h3{
@@ -200,6 +208,13 @@ h1,h2, h3, h4, label, .btn{
             }
         }
     }  
+    .btn{
+        font-size: 2.5rem;
+        padding: 1.5rem 3rem;
+    }
+    main{
+        padding: 6rem;
+    }
 }
 @media (min-width: $desktopM){
     .home{
@@ -218,7 +233,6 @@ h1,h2, h3, h4, label, .btn{
             }
         }
         .btn{
-            font-size: 3rem;
             margin: 11rem 0;
         }
         
@@ -230,6 +244,12 @@ h1,h2, h3, h4, label, .btn{
             }
         }
     }  
+    .btn{
+        font-size: 3rem;
+    }
+    main{
+        padding: 8rem;
+    }
 }
 
 

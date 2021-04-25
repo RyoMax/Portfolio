@@ -5,11 +5,10 @@
     min-height: 90vh;
     .project-card{
         width: 100%;
-        border: 2px solid $orange;
         border-radius: 5px;
         margin: 4rem 0;
         a{
-            color: $dark;
+            color: $bright;
             text-decoration: none;
             &:hover img{
                 opacity: .7;

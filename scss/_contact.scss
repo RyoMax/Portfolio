@@ -1,26 +1,22 @@
 .contact{
     display: grid;
-    grid-template-areas:    "intro"
+    grid-template-areas:    "header"
+                            "intro"
                             "form"
                             "details";
-    .contact-intro{
-        grid-area: intro;
+    .contact-header{
+        grid-area: header;
         h2{
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
+    }
+    .contact-intro{
+        grid-area: intro;
         p{
             margin-bottom: 4rem;
         }
         
-    }
-    .contact-pic{
-        display: none;
-        grid-area: pic;
-        iframe{
-            width: 100%;
-            height: auto;
-        }
     }
     .contact-form{
         grid-area: form;
@@ -30,16 +26,16 @@
                                     "primary"
                                     "secondary"
                                     "send";
-            border: 4px solid $orange;
             border-radius: 15px;
             padding: 2rem;
-            background-color: $bright;
-            color: $dark;
+            background-color: $dark;
+            color: $bright;
             font-weight: bold;
             .heading{
                 grid-area: heading;
                 h2{
                     text-align: center;
+                    margin-bottom: 2rem;
                 }
             }
             .primary{
@@ -52,6 +48,9 @@
                 grid-area: send;
                 display: flex;
                 justify-content: center;
+                .btn{
+                    width: 80%;
+                }
             }
             .grid-element{
                 div{
@@ -62,20 +61,31 @@
                     }
                     &::before{
                         content: "";
-                        @include CodeArrow($left, 2rem, $dark);
+                        @include CodeArrow($left, 2rem, transparent);
+                        transition: background-color .3s;
                     }
                     &::after{
                         content: "";
-                        @include CodeArrow($right, 2rem, $dark);
-                    }                
+                        @include CodeArrow($right, 2rem, transparent);
+                        transition: background-color .3s;
+                    }
+                    &:focus-within::before{
+                        content: "";
+                        @include CodeArrow($left, 2rem, $orange);
+                    }
+                    &:focus-within::after{
+                        content: "";
+                        @include CodeArrow($right, 2rem, $orange);
+                    }                    
                     input:not(.btn), textarea{
                         padding: 0 1rem;
                         width: calc(100% - 4rem);
                         height: 2rem;
-                        border: 2px solid $dark;
-                        border-radius: 5px;
-                        background-color: $bright;
-                        color: $dark;
+                        border: 2px solid $bright;
+                        border-radius: 1.1rem;
+                        background-color: $dark;
+                        color: $bright;
+                        transition: all .3s;
                         &::placeholder{
                             font-family: "cutive mono";
                             color: $dark;
@@ -94,10 +104,10 @@
                         padding: 1rem;
                     }  
                 }
-                .last::before{
+                .last:focus-within::before{
                    transform: translateY(150%);
                 }
-                .last::after{
+                .last:focus-within::after{
                     transform: translateY(150%) rotate($right);
                 }
                 label{
@@ -124,26 +134,57 @@
 }
 @media (min-width: $tablet){
     .contact{
-        grid-template-areas:    "intro intro"
-                                "form details";
-        grid-template-columns: 1fr 15rem;
+        /* grid-template-areas:    "header"
+                                "intro"
+                                "form"
+                                "details"; */
+        grid-template-areas:    "header ."
+                                "intro form"
+                                "details form";
+        
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        .contact-intro{
+            display: flex;
+            align-items: center;
+            p{
+                font-size: 2rem;
+                margin: 0;
+            }
+        }
+        .contact-header{
+            grid-area: header;
+            h2{
+                font-size: 3rem;
+                text-align: center;
+                margin-bottom: 3rem;
+            }
+        }
         .contact-form{
             form{
-                grid-template-areas:    "heading heading"
+                /* grid-template-areas:    "heading heading"
                                         "primary secondary"
                                         "send send";
                 grid-template-columns: 1fr 1.5fr;
-                gap: 2rem;
+                gap: 2rem; */
                 .grid-element{
                     div{
                         &::before{
                             content: "";
-                            @include CodeArrow($left, 3rem, $dark);
+                            @include CodeArrow($left, 3rem, transparent);
                         }
                         &::after{
                             content: "";
-                            @include CodeArrow($right, 3rem, $dark);
-                        }      
+                            @include CodeArrow($right, 3rem, transparent);
+                        }   
+                        &:focus-within::before{
+                            content: "";
+                            @include CodeArrow($left, 3rem, $orange);
+                        }
+                        &:focus-within::after{
+                            content: "";
+                            @include CodeArrow($right, 3rem, $orange);
+                        }    
                         input:not(.send){
                             height: 3rem;
                         }
@@ -151,11 +192,11 @@
                             height: 16.2rem;
                         }
                     }
-                    .last::before{
+                    .last:focus-within::before{
                         content: "";
                         transform: translateY(222%);
                     }
-                    .last::after{
+                    .last:focus-within::after{
                         content: "";
                         transform: translateY(222%) rotate($right);
                         input[type="submit"]{
@@ -171,18 +212,25 @@
             align-items: center;
             address{
                 text-align: left;
-                margin: 0 0 0 2rem;
             }
         }
     }
 }
 @media (min-width: $desktop){
     .contact{
-        grid-template-areas:    "intro pic pic"
-                                "form form details";
-        grid-template-columns: 1fr 1fr 15rem;
-        .contact-pic{
-            display: block;
+        .contact-intro{
+            grid-area: intro;
+            p{
+                margin: 4rem 0;
+            }
+            
+        }
+        .contact-form form{
+            .send{
+                .btn{
+                    width: 50%;
+                }
+            }
         }
     }
 }
