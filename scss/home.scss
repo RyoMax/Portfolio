@@ -1,14 +1,126 @@
-body{
-    font-size: 1.6rem;
-    font-family: Helvetica, Arial, sans-serif;
-    color: $bright;
+@font-face {
+    font-family: "futura bold";
+    src: url(./../fonts/futura/Futura-Bold.ttf);
+}
+@font-face {
+    font-family: "cutive mono";
+    src: url(./../fonts/cutive-mono/CutiveMono-Regular.ttf);
 }
 
-/* .btn{
-    
-} */
+body{
+    font-size: 1.6rem;
+    font-family: 'cutive mono', Courier, monospace;
+    color: $dark;
+    background-colour: $bright;
+}
+
+.btn{
+    height: 3rem;
+    padding: .5rem 1.5rem;
+    margin: 4rem 0;
+    border: none;
+    outline: none;
+    background-color: $orange;
+    border-radius: 3rem;
+    color: $bright;
+    font-family: "futura bold";
+    font-size: 1.1rem;
+}
+
 main{
     padding: 2rem;
-    background-color: $dark;
+    background-color: $bright;
 }
+h1,h2, h3, h4, label, .btn{
+    font-family: "futura bold";
+}
+.home{
+    background-image: url("../img/Skizze.png");
+    background-size: 400px auto;
+    background-repeat: no-repeat;
+    background-position: 55px 60px;
+}
+.header-home{
+    padding: 3rem 0 0 3rem;
+    h2{
+        margin-bottom: 2.5rem;
+        width: 50%;
+        font-size: 1.8rem;
+    }
+    h1{
+        width: 50%;
+        font-size: 1.3rem;
+    }
+}
+.main-home{
+    padding-left: 3rem;
+    background-color: unset;
+    h3{
+        width: 50%;
+        font-size: 1.3rem;
+    }
+    .toolbox{
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+        > img{
+            width: 200px;
+        }
+    }
+}
+@media (min-width: $mobileS){
+    .home{
+        background-size: 325px auto;
+        background-position: 135px 60px;
+        h1, h2, h3{
+            max-width: 240px;
+        }
+    }
+}
+@media (min-width: $mobileL){
+    .home{
+        background-size: 57% auto;
+        background-position: 125% 60px;
+    }
+    .main-home .toolbox{
+        display: block;
+        margin: 6rem 0 0 4rem;
+        > img{
+            width: 300px;
+        }
+    }
+}
+@media (min-width: $tablet){
+    .home{
+        background-position: 125% 110px;
+        h1, h2, h3{
+            max-width: 400px;
+        }
+    }
+    
+    /* .main-home .toolbox{
+        display: block;
+        margin: 6rem 0 0 4rem;
+        > img{
+            width: 300px;
+        }
+    } */
+}
+@media (min-width: $desktop){
+    .home{
+        background-size: auto 80%;
+        background-position: 115% 110px;
+        h1, h2, h3{
+            max-width: 50%;
+        }
+    }
+    .main-home .toolbox{
+        display: block;
+        margin: 6rem 0 0 4rem;
+        > img{
+            width: 300px;
+        }
+    }
+}
+
 

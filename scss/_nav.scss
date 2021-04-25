@@ -3,9 +3,12 @@ nav{
     top: 0;
     display: flex;
     justify-content: flex-end;
-    height: 10vh;
-    background-color: black;
+    height: 60px;
+    background-color: $bright;
     z-index: 10;
+    .logo{
+        height: 28px;
+    }
     .mrgn-right{
         margin-right: auto;
     }
@@ -14,27 +17,76 @@ nav{
         align-items: center;
         justify-content: center;
         height: 100%;
-        padding: 0 1rem;
-        color: white;
+        padding: 0rem;
+        font-family: "futura bold", Helvetica, sans-serif;
+        font-size: 1.1rem;
+        color: $dark;
         text-decoration: none;
         font-weight: bold;
+        &:not(.mrgn-right)::before, &::before{
+            content: "";
+            @include CodeArrow($left, 1.1rem, transparent);
+            transition: background-color .2s;
+        }
+        &:not(.mrgn-right)::after, &::after{
+            content: "";
+            @include CodeArrow($right, 1.1rem, transparent);
+            transition: background-color .2s
+        }
+        &:not(.mrgn-right):hover::before, &:active::before{
+            @include CodeArrow($left, 1.1rem, $orange);
+        }
+        &:not(.mrgn-right):hover::after, &:active::after{
+            @include CodeArrow($right, 1.1rem, $orange);
+        }
     }
-    div{
-        display: flex;
-        flex-grow: 1;
-        justify-content: space-around;
-        height: 100%;
+}
+@media (min-width: $mobileL){
+    nav{
+        .logo{
+            height: 35px;
+        }
+        a{
+            padding: 0 1rem;
+        }
     }
-
 }
 @media (min-width: $tablet){
     nav{
+        height:110px;
+        .mrgn-right{
+            margin-right: auto;
+        }
+        .logo{
+            height: 70px;
+        }
         div{
             flex-grow: 0;
             width: 70%;
         }
-        a{
+        a:not(.mrgn-right){
             padding: 0 2rem;
+            font-size: 2.5rem;
+            &:before, &::before{
+                @include CodeArrow($left, 2rem, transparent);
+            }
+            &:after, &::after{
+                @include CodeArrow($right, 2rem, transparent);
+            }
+            &:hover::before, &:active::before{
+                @include CodeArrow($left, 2rem, $orange);
+            }
+            &:hover::after, &:active::after{
+                @include CodeArrow($right, 2rem, $orange);
+            }
+        }
+    }
+}
+@media (min-width: $desktop){
+    nav{
+        a{
+            padding: 0 3rem;
+            margin: 0 2rem;
         }
     }
 }

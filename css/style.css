@@ -8,28 +8,147 @@
   font-size: 10px;
 }
 
+@font-face {
+  font-family: "futura bold";
+  src: url(./../fonts/futura/Futura-Bold.ttf);
+}
+@font-face {
+  font-family: "cutive mono";
+  src: url(./../fonts/cutive-mono/CutiveMono-Regular.ttf);
+}
 body {
   font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
-  color: white;
+  font-family: "cutive mono", Courier, monospace;
+  color: #171222;
+  background-colour: white;
 }
 
-/* .btn{
+.btn {
+  height: 3rem;
+  padding: 0.5rem 1.5rem;
+  margin: 4rem 0;
+  border: none;
+  outline: none;
+  background-color: #d86b32;
+  border-radius: 3rem;
+  color: white;
+  font-family: "futura bold";
+  font-size: 1.1rem;
+}
 
-} */
 main {
   padding: 2rem;
-  background-color: black;
+  background-color: white;
 }
 
+h1, h2, h3, h4, label, .btn {
+  font-family: "futura bold";
+}
+
+.home {
+  background-image: url("../img/Skizze.png");
+  background-size: 400px auto;
+  background-repeat: no-repeat;
+  background-position: 55px 60px;
+}
+
+.header-home {
+  padding: 3rem 0 0 3rem;
+}
+.header-home h2 {
+  margin-bottom: 2.5rem;
+  width: 50%;
+  font-size: 1.8rem;
+}
+.header-home h1 {
+  width: 50%;
+  font-size: 1.3rem;
+}
+
+.main-home {
+  padding-left: 3rem;
+  background-color: unset;
+}
+.main-home h3 {
+  width: 50%;
+  font-size: 1.3rem;
+}
+.main-home .toolbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+.main-home .toolbox > img {
+  width: 200px;
+}
+
+@media (min-width: 319px) {
+  .home {
+    background-size: 325px auto;
+    background-position: 135px 60px;
+  }
+  .home h1, .home h2, .home h3 {
+    max-width: 240px;
+  }
+}
+@media (min-width: 480px) {
+  .home {
+    background-size: 57% auto;
+    background-position: 125% 60px;
+  }
+
+  .main-home .toolbox {
+    display: block;
+    margin: 6rem 0 0 4rem;
+  }
+  .main-home .toolbox > img {
+    width: 300px;
+  }
+}
+@media (min-width: 768px) {
+  .home {
+    background-position: 125% 110px;
+  }
+  .home h1, .home h2, .home h3 {
+    max-width: 400px;
+  }
+
+  /* .main-home .toolbox{
+      display: block;
+      margin: 6rem 0 0 4rem;
+      > img{
+          width: 300px;
+      }
+  } */
+}
+@media (min-width: 1024px) {
+  .home {
+    background-size: auto 80%;
+    background-position: 115% 110px;
+  }
+  .home h1, .home h2, .home h3 {
+    max-width: 50%;
+  }
+
+  .main-home .toolbox {
+    display: block;
+    margin: 6rem 0 0 4rem;
+  }
+  .main-home .toolbox > img {
+    width: 300px;
+  }
+}
 nav {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: flex-end;
-  height: 10vh;
-  background-color: black;
+  height: 60px;
+  background-color: white;
   z-index: 10;
+}
+nav .logo {
+  height: 28px;
 }
 nav .mrgn-right {
   margin-right: auto;
@@ -39,25 +158,105 @@ nav a {
   align-items: center;
   justify-content: center;
   height: 100%;
-  padding: 0 1rem;
-  color: white;
+  padding: 0rem;
+  font-family: "futura bold", Helvetica, sans-serif;
+  font-size: 1.1rem;
+  color: #171222;
   text-decoration: none;
   font-weight: bold;
 }
-nav div {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-around;
-  height: 100%;
+nav a:not(.mrgn-right)::before, nav a::before {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: transparent;
+  clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+  transform: rotate(0deg);
+  transition: background-color 0.2s;
+}
+nav a:not(.mrgn-right)::after, nav a::after {
+  content: "";
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: transparent;
+  clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+  transform: rotate(180deg);
+  transition: background-color 0.2s;
+}
+nav a:not(.mrgn-right):hover::before, nav a:active::before {
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: #d86b32;
+  clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+  transform: rotate(0deg);
+}
+nav a:not(.mrgn-right):hover::after, nav a:active::after {
+  width: 1.1rem;
+  height: 1.1rem;
+  background-color: #d86b32;
+  clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+  transform: rotate(180deg);
 }
 
+@media (min-width: 480px) {
+  nav .logo {
+    height: 35px;
+  }
+  nav a {
+    padding: 0 1rem;
+  }
+}
 @media (min-width: 768px) {
+  nav {
+    height: 110px;
+  }
+  nav .mrgn-right {
+    margin-right: auto;
+  }
+  nav .logo {
+    height: 70px;
+  }
   nav div {
     flex-grow: 0;
     width: 70%;
   }
-  nav a {
+  nav a:not(.mrgn-right) {
     padding: 0 2rem;
+    font-size: 2.5rem;
+  }
+  nav a:not(.mrgn-right):before, nav a:not(.mrgn-right)::before {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(0deg);
+  }
+  nav a:not(.mrgn-right):after, nav a:not(.mrgn-right)::after {
+    width: 2rem;
+    height: 2rem;
+    background-color: transparent;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(180deg);
+  }
+  nav a:not(.mrgn-right):hover::before, nav a:not(.mrgn-right):active::before {
+    width: 2rem;
+    height: 2rem;
+    background-color: #d86b32;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(0deg);
+  }
+  nav a:not(.mrgn-right):hover::after, nav a:not(.mrgn-right):active::after {
+    width: 2rem;
+    height: 2rem;
+    background-color: #d86b32;
+    clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
+    transform: rotate(180deg);
+  }
+}
+@media (min-width: 1024px) {
+  nav a {
+    padding: 0 3rem;
+    margin: 0 2rem;
   }
 }
 .about .animating-skills .rotation {
@@ -90,7 +289,7 @@ nav div {
 .about .animating-skills .pentagon div h3 {
   /* background-color: $dark; */
   font-weight: bold;
-  box-shadow: 0 0 50px black;
+  box-shadow: 0 0 50px #171222;
 }
 .about .animating-skills .pentagon div:nth-child(1) {
   left: 40%;
@@ -216,19 +415,19 @@ nav div {
 }
 .projects .project-card {
   width: 100%;
-  border: 2px solid coral;
+  border: 2px solid #d86b32;
   border-radius: 5px;
   margin: 4rem 0;
 }
 .projects .project-card a {
-  color: white;
+  color: #171222;
   text-decoration: none;
 }
 .projects .project-card a:hover img {
   opacity: 0.7;
 }
 .projects .project-card a:hover h3 {
-  color: coral;
+  color: #d86b32;
 }
 .projects .project-card img {
   width: 100%;
@@ -288,11 +487,11 @@ nav div {
 .contact .contact-intro p {
   margin-bottom: 4rem;
 }
-.contact .contact-map {
+.contact .contact-pic {
   display: none;
-  grid-area: map;
+  grid-area: pic;
 }
-.contact .contact-map iframe {
+.contact .contact-pic iframe {
   width: 100%;
   height: auto;
 }
@@ -302,11 +501,11 @@ nav div {
 .contact .contact-form form {
   display: grid;
   grid-template-areas: "heading" "primary" "secondary" "send";
-  border: 4px solid coral;
+  border: 4px solid #d86b32;
   border-radius: 15px;
   padding: 2rem;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #171222;
   font-weight: bold;
 }
 .contact .contact-form form .heading {
@@ -337,7 +536,7 @@ nav div {
   content: "";
   width: 2rem;
   height: 2rem;
-  background-color: white;
+  background-color: #171222;
   clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
   transform: rotate(0deg);
 }
@@ -345,7 +544,7 @@ nav div {
   content: "";
   width: 2rem;
   height: 2rem;
-  background-color: white;
+  background-color: #171222;
   clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
   transform: rotate(180deg);
 }
@@ -353,19 +552,20 @@ nav div {
   padding: 0 1rem;
   width: calc(100% - 4rem);
   height: 2rem;
-  border: 2px solid white;
+  border: 2px solid #171222;
   border-radius: 5px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #171222;
 }
 .contact .contact-form form .grid-element div input:not(.btn)::placeholder, .contact .contact-form form .grid-element div textarea::placeholder {
-  color: white;
+  font-family: "cutive mono";
+  color: #171222;
   opacity: 0.8;
 }
 .contact .contact-form form .grid-element div input:not(.btn):focus, .contact .contact-form form .grid-element div textarea:focus {
-  border: 2px solid coral;
+  border: 2px solid #d86b32;
   outline: none;
-  box-shadow: 0 0 8px coral;
+  box-shadow: 0 0 8px #d86b32;
 }
 .contact .contact-form form .grid-element div textarea {
   height: 8rem;
@@ -374,11 +574,9 @@ nav div {
   padding: 1rem;
 }
 .contact .contact-form form .grid-element .last::before {
-  content: "";
   transform: translateY(150%);
 }
 .contact .contact-form form .grid-element .last::after {
-  content: "";
   transform: translateY(150%) rotate(180deg);
 }
 .contact .contact-form form .grid-element label {
@@ -411,7 +609,7 @@ nav div {
     content: "";
     width: 3rem;
     height: 3rem;
-    background-color: white;
+    background-color: #171222;
     clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
     transform: rotate(0deg);
   }
@@ -419,7 +617,7 @@ nav div {
     content: "";
     width: 3rem;
     height: 3rem;
-    background-color: white;
+    background-color: #171222;
     clip-path: polygon(75% 0%, 25% 50%, 75% 100%, 50% 100%, 0% 50%, 50% 0%);
     transform: rotate(180deg);
   }
@@ -451,30 +649,40 @@ nav div {
 }
 @media (min-width: 1024px) {
   .contact {
-    grid-template-areas: "intro map map" "form form details";
+    grid-template-areas: "intro pic pic" "form form details";
     grid-template-columns: 1fr 1fr 15rem;
   }
-  .contact .contact-map {
+  .contact .contact-pic {
     display: block;
   }
 }
 footer {
-  height: 30vh;
   padding: 2rem;
+  background-color: #171222;
 }
 footer a {
-  color: coral;
+  color: white;
   font-size: 3rem;
 }
-footer .mf-logo {
+footer .footer-logo {
   display: block;
   width: fit-content;
-  margin: 0 auto;
+  margin: 2rem auto;
+}
+footer .footer-logo img {
+  width: 50px;
+  height: auto;
 }
 footer .social-links {
   display: flex;
   justify-content: space-around;
-  margin-top: 2rem;
+  margin: 2rem;
+}
+
+@media (min-width: 768px) {
+  footer .footer-logo img {
+    width: 90px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

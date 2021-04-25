@@ -1,7 +1,7 @@
-@mixin CodeArrow($direction, $size) {
+@mixin CodeArrow($direction, $size, $color) {
     width: $size;
     height: $size;
-    background-color: $bright;
+    background-color: $color;
     clip-path: polygon(75% 0%,
         25% 50%, 
         75% 100%, 
