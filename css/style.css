@@ -94,10 +94,78 @@ h2 {
   font-size: 1.5rem;
 }
 .main-home .toolbox {
+  position: relative;
   margin-top: 3rem;
 }
 .main-home .toolbox > img {
   width: 200px;
+}
+.main-home .toolbox .box {
+  display: none;
+  position: absolute;
+  width: 800px;
+  height: 250px;
+  bottom: 9px;
+  left: 0%;
+}
+.main-home .toolbox .box .wall {
+  position: relative;
+  width: calc(100% - 60px);
+  height: 100%;
+  left: 30px;
+}
+.main-home .toolbox .box .wall .wall-paint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #171222;
+  border-top: 2px solid white;
+  z-index: 3;
+}
+.main-home .toolbox .box .wall .tools {
+  /* position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit; */
+  position: relative;
+  height: inherit;
+}
+.main-home .toolbox .box .wall .tools div {
+  position: absolute;
+  top: -25%;
+  z-index: 2;
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%; */
+}
+.main-home .toolbox .box .wall .tools div img {
+  display: block;
+  width: 80px;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+.main-home .toolbox .box .wall .tools div h3 {
+  width: 100%;
+  text-align: center;
+}
+.main-home .toolbox .box .wall .tools #html {
+  left: 3%;
+}
+.main-home .toolbox .box .wall .tools #js {
+  left: 17%;
+}
+.main-home .toolbox .box .wall .tools #scss {
+  left: 46%;
+}
+.main-home .toolbox .box .wall .tools #css {
+  left: 68%;
+}
+.main-home .toolbox .box .wall .tools #bootstrap {
+  left: 79%;
 }
 
 @media (min-width: 319px) {
@@ -272,6 +340,73 @@ h2 {
   }
   .home .main-home .toolbox > img {
     width: 800px;
+  }
+  .home .main-home .toolbox .box {
+    display: block;
+    position: absolute;
+    width: 800px;
+    height: 250px;
+    bottom: 9px;
+    left: 0%;
+  }
+  .home .main-home .toolbox .box .wall {
+    position: relative;
+    width: calc(100% - 60px);
+    height: 100%;
+    left: 30px;
+  }
+  .home .main-home .toolbox .box .wall .wall-paint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #171222;
+    border-top: 2px solid white;
+    z-index: 3;
+  }
+  .home .main-home .toolbox .box .wall .tools {
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: inherit; */
+    position: relative;
+    height: inherit;
+  }
+  .home .main-home .toolbox .box .wall .tools div {
+    position: absolute;
+    top: -25%;
+    z-index: 2;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%; */
+  }
+  .home .main-home .toolbox .box .wall .tools div img {
+    display: block;
+    width: 80px;
+    height: auto;
+    margin: 0 auto 1rem;
+  }
+  .home .main-home .toolbox .box .wall .tools div h3 {
+    width: 100%;
+    text-align: center;
+  }
+  .home .main-home .toolbox .box .wall .tools #html {
+    left: 3%;
+  }
+  .home .main-home .toolbox .box .wall .tools #js {
+    left: 17%;
+  }
+  .home .main-home .toolbox .box .wall .tools #scss {
+    left: 46%;
+  }
+  .home .main-home .toolbox .box .wall .tools #css {
+    left: 68%;
+  }
+  .home .main-home .toolbox .box .wall .tools #bootstrap {
+    left: 79%;
   }
 
   .btn {
