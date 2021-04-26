@@ -82,15 +82,11 @@
                         width: calc(100% - 4rem);
                         height: 2rem;
                         border: 2px solid $bright;
-                        border-radius: 1.1rem;
+                        border-radius: 0.7rem;
                         background-color: $dark;
                         color: $bright;
                         transition: all .3s;
-                        &::placeholder{
-                            font-family: "cutive mono";
-                            color: $dark;
-                            opacity: 0.8;
-                        }
+                        font-family: "cutive mono";
                         &:focus{
                             border: 2px solid $orange;
                             outline: none;
@@ -104,10 +100,10 @@
                         padding: 1rem;
                     }  
                 }
-                .last:focus-within::before{
+                .last:focus-within::before, .last::before{
                    transform: translateY(150%);
                 }
-                .last:focus-within::after{
+                .last:focus-within::after, .last::after{
                     transform: translateY(150%) rotate($right);
                 }
                 label{
@@ -155,7 +151,6 @@
         .contact-header{
             grid-area: header;
             h2{
-                font-size: 3rem;
                 text-align: center;
                 margin-bottom: 3rem;
             }
@@ -187,16 +182,17 @@
                         }    
                         input:not(.send){
                             height: 3rem;
+                            border-radius: 1.1rem;
                         }
                         textarea{
                             height: 16.2rem;
                         }
                     }
-                    .last:focus-within::before{
+                    .last:focus-within::before, .last::before{
                         content: "";
                         transform: translateY(222%);
                     }
-                    .last:focus-within::after{
+                    .last:focus-within::after, .last::after{
                         content: "";
                         transform: translateY(222%) rotate($right);
                         input[type="submit"]{
@@ -209,7 +205,7 @@
         }
         .contact-details{
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             address{
                 text-align: left;
             }
@@ -218,10 +214,12 @@
 }
 @media (min-width: $desktop){
     .contact{
+        min-height: calc(100vh - 110px);
         .contact-intro{
             grid-area: intro;
             p{
                 margin: 4rem 0;
+                font-size: 2.7rem;
             }
             
         }
@@ -230,6 +228,55 @@
                 .btn{
                     width: 50%;
                 }
+            }
+            .grid-element{
+                div{
+                    &::before{
+                        content: "";
+                        @include CodeArrow($left, 4rem, transparent);
+                    }
+                    &::after{
+                        content: "";
+                        @include CodeArrow($right, 4rem, transparent);
+                    }   
+                    &:focus-within::before{
+                        content: "";
+                        @include CodeArrow($left, 4rem, $orange);
+                    }
+                    &:focus-within::after{
+                        content: "";
+                        @include CodeArrow($right, 4rem, $orange);
+                    }    
+                    input:not(.send){
+                        height: 4rem;
+                        border-radius: 1.3rem;
+                        font-size: 2rem;
+                    }
+                    textarea{
+                        height: 18rem;
+                    }
+                }
+                .last:focus-within::before, .last::before{
+                    content: "";
+                    transform: translateY(170%);
+                }
+                .last:focus-within::after, .last::after{
+                    content: "";
+                    transform: translateY(170%) rotate($right);
+                    input[type="submit"]{
+                        margin-top: 0rem;
+                        
+                    }
+                }
+                label{
+                font-size: 2rem;
+                margin: .5rem 0;
+                }
+            }
+        }
+        .contact-details{
+            address{
+                font-size: 1.8rem;
             }
         }
     }

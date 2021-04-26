@@ -18,7 +18,10 @@
 <body>
     <nav>
         <a class="mrgn-right" href="../.">
-            <img class="logo" src="./../img/Logo_quer.png" alt="MF">
+            <picture>
+                <source media="(min-width: 480px)" srcset="../img/Logo_quer.png">
+                <img class="logo" src="../img/Logo_nav_short.png" alt="MF">
+            </picture>
         </a>
         <a href="../about/about.html">
             about
@@ -49,37 +52,35 @@
             <form action="#" method="post">
                 <div class="grid-element heading">
                     <h2>
-                        Leave a Message
+                        leave a message
                     </h2>
                 </div>
                 <div class="grid-element primary">
-                    <label for="name">Name</label>
+                    <label for="name">name</label>
                     <div>
-                        <input type="text" name="name" id="name" minlength="1" placeholder="Your full name">
+                        <input type="text" name="name" id="name" minlength="1">
                     </div>
-                    <label for="email">Email</label>
+                    <label for="email">email</label>
 
                     <div>
                         <input type="email" name="email" id="email" minlength="5"
-                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="Your Email address">
+                            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                     </div>
-                    <label for="subject">Subject</label>
+                    <label for="subject">subject</label>
 
                     <div>
-                        <input type="text" name="subject" id="subject" minlength="3"
-                            placeholder="What kind of project?">
+                        <input type="text" name="subject" id="subject" minlength="3">
                     </div>
                 </div>
                 <div class="grid-element secondary">
-                    <label for="message">Your Message</label>
+                    <label for="message">your message</label>
 
                     <div class="last">
-                        <textarea name="message" id="message" minlength="3" maxlength="500"
-                            placeholder="Tell me some details or write something nice :)"></textarea>
+                        <textarea name="message" id="message" minlength="3" maxlength="500"></textarea>
                     </div>
                 </div>
                 <div class="grid-element send">
-                    <input class="btn" type="submit" value="SEND">
+                    <input class="btn" type="submit" value="send">
                 </div>
             </form>
         </section>
@@ -94,7 +95,7 @@
 
     </main>
     <footer>
-        <a class="footer-logo" href="./">
+        <a class="footer-logo" href="../.">
             <picture>
                 <source media="(min-width: 480px)" srcset="../img/Logo_nav_short.png">
                 <img class="logo" src="../img/logo_footer.png" alt="MF">
@@ -103,13 +104,19 @@
         <div class="social-links">
             <a href="https://www.xing.com/profile/Maximilian_Faust11/cv" target="_blank">
                 <i class="fab fa-xing-square"></i>
+                <p>xing</p>
             </a>
             <a href="#" target="_blank">
                 <i class="fab fa-linkedin"></i>
+                <p>linkedIn</p>
             </a>
             <a href="https://github.com/RyoMax" target="_blank">
                 <i class="fab fa-github-square"></i>
+                <p>github</p>
             </a>
+        </div>
+        <div class="footer-mail">
+            <a href="mailto:BsHr_Faust@web.de">BsHr_Faust@web.de</a>
         </div>
     </footer>
 

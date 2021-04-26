@@ -18,7 +18,10 @@
 <body>
     <nav>
         <a class="mrgn-right" href="../.">
-            <img class="logo" src="./../img/Logo_quer.png" alt="MF">
+            <picture>
+                <source media="(min-width: 480px)" srcset="../img/Logo_quer.png">
+                <img class="logo" src="../img/Logo_nav_short.png" alt="MF">
+            </picture>
         </a>
         <a href="../about/about.html">
             about
@@ -31,31 +34,36 @@
         </a>
 
     </nav>
+    <header class="project-header">
+        <h2>
+            max' work so far:
+        </h2>
+    </header>
     <main class="projects">
         <div class="project-card">
-            <a href="#">
-                <img src="../img/BG.png" alt="Project 1">
-                <h3>Project 1</h3>
+            <a href="https://ryomax.github.io/drumschool-berlin/">
+                <img src="../img/Drumschool" alt="Drumschool">
+                <h3>drumschool - berlin</h3>
             </a>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>The new Website for the Drumschool-Berlin.</p>
         </div>
         <div class="project-card">
-            <a href="#">
-                <img src="../img/BG.png" alt="Project 2">
-                <h3>Project 2</h3>
+            <a href="https://ryomax.github.io/lomi5/">
+                <img src="../img/Lomi5.png" alt="Lomi 5">
+                <h3>lomi 5</h3>
             </a>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>Book your Lomi massage!</p>
         </div>
         <div class="project-card">
-            <a href="#">
-                <img src="../img/BG.png" alt="Project 3">
-                <h3>Project 3</h3>
+            <a href="https://ryomax.github.io/You-Nique_Cerial/">
+                <img src="../img/You-Nique.png" alt="You-Nique Cerial">
+                <h3>you-nique cerial</h3>
             </a>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+            <p>A little fun page I did during the orientation course</p>
         </div>
     </main>
     <footer>
-        <a class="footer-logo" href="./">
+        <a class="footer-logo" href="../.">
             <picture>
                 <source media="(min-width: 480px)" srcset="../img/Logo_nav_short.png">
                 <img class="logo" src="../img/logo_footer.png" alt="MF">
@@ -64,13 +72,19 @@
         <div class="social-links">
             <a href="https://www.xing.com/profile/Maximilian_Faust11/cv" target="_blank">
                 <i class="fab fa-xing-square"></i>
+                <p>xing</p>
             </a>
             <a href="#" target="_blank">
                 <i class="fab fa-linkedin"></i>
+                <p>linkedIn</p>
             </a>
             <a href="https://github.com/RyoMax" target="_blank">
                 <i class="fab fa-github-square"></i>
+                <p>github</p>
             </a>
+        </div>
+        <div class="footer-mail">
+            <a href="mailto:BsHr_Faust@web.de">BsHr_Faust@web.de</a>
         </div>
     </footer>
 
