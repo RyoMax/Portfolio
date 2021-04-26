@@ -289,6 +289,7 @@ h2 {
   }
   .home .btn {
     margin: 8rem 0;
+    max-width: 40%;
   }
   .home h3 {
     font-size: 3rem;
@@ -395,18 +396,23 @@ h2 {
   }
   .home .main-home .toolbox .box .wall .tools #html {
     left: 3%;
+    animation: moveTool 2s ease-in infinite;
   }
   .home .main-home .toolbox .box .wall .tools #js {
     left: 17%;
+    animation: moveTool 2s 2s ease-in infinite;
   }
   .home .main-home .toolbox .box .wall .tools #scss {
     left: 46%;
+    animation: moveTool 2s 4s ease-in infinite;
   }
   .home .main-home .toolbox .box .wall .tools #css {
     left: 68%;
+    animation: moveTool 2s 6s ease-in infinite;
   }
   .home .main-home .toolbox .box .wall .tools #bootstrap {
     left: 79%;
+    animation: moveTool 2s 8s ease-in infinite;
   }
 
   .btn {
@@ -419,6 +425,17 @@ h2 {
 
   h2 {
     font-size: 7rem;
+  }
+}
+@keyframes moveTool {
+  0% {
+    top: -25%;
+  }
+  50% {
+    top: -75%;
+  }
+  100% {
+    top: -25%;
   }
 }
 nav {
@@ -1076,6 +1093,7 @@ nav a:not(.mrgn-right):hover::after, nav a:active::after {
   }
   .contact .contact-form form .grid-element div textarea {
     height: 16.2rem;
+    border-radius: 1.1rem;
   }
   .contact .contact-form form .grid-element .last:focus-within::before, .contact .contact-form form .grid-element .last::before {
     content: "";
@@ -1149,6 +1167,8 @@ nav a:not(.mrgn-right):hover::after, nav a:active::after {
   }
   .contact .contact-form form .grid-element div textarea {
     height: 18rem;
+    font-size: 2rem;
+    border-radius: 1.3rem;
   }
   .contact .contact-form form .grid-element .last:focus-within::before, .contact .contact-form form .grid-element .last::before {
     content: "";

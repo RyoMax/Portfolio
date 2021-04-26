@@ -186,6 +186,7 @@
                         }
                         textarea{
                             height: 16.2rem;
+                            border-radius: 1.1rem;
                         }
                     }
                     .last:focus-within::before, .last::before{
@@ -254,6 +255,8 @@
                     }
                     textarea{
                         height: 18rem;
+                        font-size: 2rem;
+                        border-radius: 1.3rem;
                     }
                 }
                 .last:focus-within::before, .last::before{
