@@ -378,23 +378,23 @@ h2{
                         }
                         #html{
                             left: 3%;
-                            animation: moveTool 2s linear alternate-reverse infinite;
+                            animation: moveTool 10s ease infinite;
                         }
                         #js{
                             left: 17%;
-                            animation: moveTool 2s 2s linear alternate-reverse infinite;
+                            animation: moveTool 10s 2s ease infinite;
                         }
                         #scss{
                             left: 46%;
-                            animation: moveTool 2s 4s linear alternate-reverse infinite;
+                            animation: moveTool 10s 4s ease infinite;
                         }
                         #css{
                             left: 68%;
-                            animation: moveTool 2s 6s linear alternate-reverse infinite;
+                            animation: moveTool 10s 6s ease infinite;
                         }
                         #bootstrap{
                             left: 79%;
-                            animation: moveTool 2s 8s linear alternate-reverse infinite;
+                            animation: moveTool 10s 8s ease infinite;
                         }
                         animation: name duration timing-function delay iteration-count direction fill-mode;
                     }
@@ -416,8 +416,11 @@ h2{
     0%{
         top: -25%;
     }
-    50%{
+    10%{
         top: -75%;
+    }
+    20%{
+        top: -25%;
     }
     100%{
         top: -25%;

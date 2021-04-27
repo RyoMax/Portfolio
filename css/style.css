@@ -397,23 +397,23 @@ h2 {
   }
   .home .main-home .toolbox .box .wall .tools #html {
     left: 3%;
-    animation: moveTool 2s linear alternate-reverse infinite;
+    animation: moveTool 10s ease infinite;
   }
   .home .main-home .toolbox .box .wall .tools #js {
     left: 17%;
-    animation: moveTool 2s 2s linear alternate-reverse infinite;
+    animation: moveTool 10s 2s ease infinite;
   }
   .home .main-home .toolbox .box .wall .tools #scss {
     left: 46%;
-    animation: moveTool 2s 4s linear alternate-reverse infinite;
+    animation: moveTool 10s 4s ease infinite;
   }
   .home .main-home .toolbox .box .wall .tools #css {
     left: 68%;
-    animation: moveTool 2s 6s linear alternate-reverse infinite;
+    animation: moveTool 10s 6s ease infinite;
   }
   .home .main-home .toolbox .box .wall .tools #bootstrap {
     left: 79%;
-    animation: moveTool 2s 8s linear alternate-reverse infinite;
+    animation: moveTool 10s 8s ease infinite;
   }
 
   .btn {
@@ -432,8 +432,11 @@ h2 {
   0% {
     top: -25%;
   }
-  50% {
+  10% {
     top: -75%;
+  }
+  20% {
+    top: -25%;
   }
   100% {
     top: -25%;
