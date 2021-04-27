@@ -2,10 +2,6 @@ footer{
     padding: 2rem;
     background-color: $orange;
     a{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 2rem;
         color: $bright;
         font-size: 3rem;
         text-decoration: none;
@@ -19,9 +15,11 @@ footer{
         }
     }
     .footer-logo{
-        display: block;
-        width: fit-content;
-        margin: 2rem auto;
+        display: flex;
+        justify-content: center;
+        a{
+            padding: 2rem;
+        }
         img{
             height: 100px;
             width: auto;
@@ -32,6 +30,19 @@ footer{
         justify-content: space-around;
         margin: 2rem;
         margin-bottom: 0;
+        a{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            p{
+                font-size: 1.2rem;
+                margin-top: .5rem;
+            }
+            &:hover, &:active{
+                color: $dark;
+            }
+        }
     }
     .footer-mail{
         display: flex;

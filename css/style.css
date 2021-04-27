@@ -373,6 +373,7 @@ h2 {
     width: inherit; */
     position: relative;
     height: inherit;
+    animation: name duration timing-function delay iteration-count direction fill-mode;
   }
   .home .main-home .toolbox .box .wall .tools div {
     position: absolute;
@@ -396,23 +397,23 @@ h2 {
   }
   .home .main-home .toolbox .box .wall .tools #html {
     left: 3%;
-    animation: moveTool 2s ease-in infinite;
+    animation: moveTool 2s linear alternate-reverse infinite;
   }
   .home .main-home .toolbox .box .wall .tools #js {
     left: 17%;
-    animation: moveTool 2s 2s ease-in infinite;
+    animation: moveTool 2s 2s linear alternate-reverse infinite;
   }
   .home .main-home .toolbox .box .wall .tools #scss {
     left: 46%;
-    animation: moveTool 2s 4s ease-in infinite;
+    animation: moveTool 2s 4s linear alternate-reverse infinite;
   }
   .home .main-home .toolbox .box .wall .tools #css {
     left: 68%;
-    animation: moveTool 2s 6s ease-in infinite;
+    animation: moveTool 2s 6s linear alternate-reverse infinite;
   }
   .home .main-home .toolbox .box .wall .tools #bootstrap {
     left: 79%;
-    animation: moveTool 2s 8s ease-in infinite;
+    animation: moveTool 2s 8s linear alternate-reverse infinite;
   }
 
   .btn {
@@ -1194,10 +1195,6 @@ footer {
   background-color: #d86b32;
 }
 footer a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 2rem;
   color: white;
   font-size: 3rem;
   text-decoration: none;
@@ -1211,9 +1208,11 @@ footer a:hover, footer a:active {
   color: #171222;
 }
 footer .footer-logo {
-  display: block;
-  width: fit-content;
-  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+footer .footer-logo a {
+  padding: 2rem;
 }
 footer .footer-logo img {
   height: 100px;
@@ -1224,6 +1223,19 @@ footer .social-links {
   justify-content: space-around;
   margin: 2rem;
   margin-bottom: 0;
+}
+footer .social-links a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+footer .social-links a p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+footer .social-links a:hover, footer .social-links a:active {
+  color: #171222;
 }
 footer .footer-mail {
   display: flex;
